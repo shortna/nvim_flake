@@ -60,4 +60,4 @@ g.loaded_python3_provider = 0
 g.airline_symbols_ascii = 1
 g.airline_section_z = ""
 
-vim.cmd("colorscheme catppuccin-latte")
+vim.cmd("colorscheme base16-catppuccin-latte")

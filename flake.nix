@@ -32,11 +32,11 @@
         cmp-buffer
         vim-airline
         plenary-nvim
+	base16-nvim
         telescope-nvim
         vim-fugitive
         undotree
         vim-slime
-        catppuccin-nvim
         nvim-treesitter.withAllGrammars
       ];
 
