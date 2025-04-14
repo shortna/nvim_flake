@@ -104,3 +104,4 @@ lspconfig.nixd.setup({
 })
 lspconfig.pyright.setup({})
 lspconfig.csharp_ls.setup({})
+lspconfig.fennel_ls.setup({})
