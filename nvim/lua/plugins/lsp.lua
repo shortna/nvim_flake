@@ -1,24 +1,28 @@
 -- LSP
-local cmp = require('cmp')
 local lspconfig = require('lspconfig')
+local blink = require('blink.cmp')
+blink.setup({
+    -- 'default' for mappings similar to built-in completion
+    -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
+    -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
+    -- see the "default configuration" section below for full documentation on how to define
+    -- your own keymap.
+    keymap = { preset = 'default' },
 
--- nvim-cmp setup
-cmp.setup({ snippet = {
-    expand = function(args)
-      vim.snippet.expand(args.body)
-    end,
-  },
-  mapping = cmp.mapping.preset.insert({
-    ['<C-p>'] = cmp.mapping.select_prev_item(),
-    ['<C-n>'] = cmp.mapping.select_next_item(),
-    ['<CR>'] = cmp.mapping.confirm({ select = false })
-  }),
-  sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'path' },
-    { name = 'buffer' },
-  }),
-})
+    appearance = {
+      -- Set to 'mono' for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
+      -- Adjusts spacing to ensure icons are aligned
+      nerd_font_variant = 'mono'
+    },
+
+    -- default list of enabled providers defined so that you can extend it
+    -- elsewhere in your config, without redefining it, via `opts_extend`
+    sources = { default = { 'lsp', 'path', 'snippets', 'buffer' } },
+
+    -- experimental auto-brackets support
+    -- completion = { accept = { auto_brackets = { enabled = true } } }
+    signature = { enabled = true }
+  })
 
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(args)

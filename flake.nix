@@ -26,10 +26,7 @@
 
       plugins = with pkgs.vimPlugins; [
         nvim-lspconfig
-        nvim-cmp
-        cmp-nvim-lsp
-        cmp-path
-        cmp-buffer
+	blink-cmp
         vim-airline
         plenary-nvim
 	base16-nvim
