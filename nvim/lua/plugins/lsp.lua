@@ -123,3 +123,6 @@ lspconfig.csharp_ls.setup({
 lspconfig.fennel_ls.setup({
 	capabilities = capabilities
 })
+lspconfig.kotlin_language_server.setup({
+	capabilities = capabilities
+})
