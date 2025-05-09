@@ -120,6 +120,6 @@ lspconfig.pyright.setup({
 lspconfig.csharp_ls.setup({
 	capabilities = capabilities
 })
-lspconfig.fennel_ls.setup({
+lspconfig.tsserver.setup({
 	capabilities = capabilities
 })
