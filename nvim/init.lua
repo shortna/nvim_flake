@@ -5,6 +5,7 @@ local opt = vim.opt
 opt.syntax = "enable"
 opt.number = true
 opt.relativenumber = true
+opt.expandtab = true
 
 opt.colorcolumn = "0"
 opt.wrap = false

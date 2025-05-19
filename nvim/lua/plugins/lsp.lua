@@ -117,9 +117,3 @@ lspconfig.nixd.setup({
 lspconfig.pyright.setup({
 	capabilities = capabilities
 })
-lspconfig.csharp_ls.setup({
-	capabilities = capabilities
-})
-lspconfig.fennel_ls.setup({
-	capabilities = capabilities
-})
