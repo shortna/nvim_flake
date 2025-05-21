@@ -25,11 +25,10 @@
       ];
 
       plugins = with pkgs.vimPlugins; [
-        nvim-lspconfig
-	blink-cmp
+        blink-cmp
         vim-airline
         plenary-nvim
-	base16-nvim
+        base16-nvim
         telescope-nvim
         vim-fugitive
         undotree

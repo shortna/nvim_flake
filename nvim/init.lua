@@ -5,7 +5,6 @@ local opt = vim.opt
 opt.syntax = "enable"
 opt.number = true
 opt.relativenumber = true
-opt.expandtab = true
 
 opt.colorcolumn = "0"
 opt.wrap = false
@@ -22,14 +21,15 @@ opt.wrapscan = false
 -- fold stuff
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
-opt.foldenable = false
-opt.foldlevel = 99
+opt.foldenable = true
+opt.foldlevel = 3
 
 -- indent stuff
 opt.expandtab = false
 opt.tabstop = 8
 opt.shiftwidth = 2
 opt.softtabstop = 2
+opt.expandtab = true
 
 -- menu stuff
 opt.wildmenu = true
