@@ -26,11 +26,9 @@
 
       plugins = with pkgs.vimPlugins; [
         blink-cmp
-        vim-airline
         plenary-nvim
         base16-nvim
         telescope-nvim
-        vim-fugitive
         undotree
         vim-slime
         nvim-treesitter.withAllGrammars
@@ -40,7 +38,7 @@
         withPython3 = false;
         withNodeJs = false;
         withRuby = false;
-        viAlias = true;
+        viAlias = false;
 
         configure.customRC = config;
         configure.packages = {
@@ -51,26 +49,22 @@
       };
     in
     {
-      devShells.${system}.default = pkgs.stdenv.mkDerivation {
-        name = "nvim";
-        buildInputs = [ nvim ] ++ runtimeDeps;
-      };
       packages.${system}.default = pkgs.stdenv.mkDerivation {
         name = "nvim";
         src = nvim;
         nativeBuildInputs = with pkgs; [ makeWrapper ];
         installPhase = ''
-          				runHook preInstall
-          				mkdir -p $out/bin
-          				cp ${nvim}/bin/nvim $out/bin
-          				runHook postInstall
-          				'';
+          runHook preInstall
+          mkdir -p $out/bin
+          cp ${nvim}/bin/nvim $out/bin
+          runHook postInstall
+        '';
         # https://nixos.org/manual/nixpkgs/unstable/#ssec-stdenv-dependencies-overview
         # see example
         postInstall = ''
-          				wrapProgram $out/bin/nvim \
-          				--prefix PATH : ${pkgs.lib.makeBinPath runtimeDeps}
-          			'';
+          wrapProgram $out/bin/nvim \
+          --prefix PATH : ${pkgs.lib.makeBinPath runtimeDeps}
+        '';
       };
 
     };
