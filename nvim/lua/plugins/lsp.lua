@@ -21,7 +21,13 @@ blink.setup({
 
   -- experimental auto-brackets support
   -- completion = { accept = { auto_brackets = { enabled = true } } }
-  signature = { enabled = true }
+  signature = { enabled = true },
+
+  -- Show documentation when selecting a completion item
+  documentation = {
+    auto_show = true,
+    auto_show_delay_ms = 500,
+  },
 })
 
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -48,8 +54,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<Leader>lrn', vim.lsp.buf.rename, opts)
     vim.keymap.set('n', '<Leader>lr', vim.lsp.buf.references, opts)
     vim.keymap.set('n', '<Leader>le', vim.diagnostic.open_float, opts)
-    vim.keymap.set('n', '<Leader>lpe', function() vim.diagnostic.jump({count = -1}) end, opts)
-    vim.keymap.set('n', '<Leader>lne', function() vim.diagnostic.jump({count = 1}) end, opts)
+    vim.keymap.set('n', '<Leader>lpe', function() vim.diagnostic.jump({ count = -1 }) end, opts)
+    vim.keymap.set('n', '<Leader>lne', function() vim.diagnostic.jump({ count = 1 }) end, opts)
     vim.keymap.set('n', '<Leader>lq', vim.diagnostic.setloclist, opts)
   end,
 })

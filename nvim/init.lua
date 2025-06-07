@@ -5,6 +5,7 @@ local opt = vim.opt
 opt.syntax = "enable"
 opt.number = true
 opt.relativenumber = true
+vim.o.winborder = "single"
 
 opt.colorcolumn = "0"
 opt.wrap = false
