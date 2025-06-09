@@ -22,12 +22,6 @@ blink.setup({
   -- experimental auto-brackets support
   -- completion = { accept = { auto_brackets = { enabled = true } } }
   signature = { enabled = true },
-
-  -- Show documentation when selecting a completion item
-  documentation = {
-    auto_show = true,
-    auto_show_delay_ms = 500,
-  },
 })
 
 vim.api.nvim_create_autocmd('LspAttach', {
