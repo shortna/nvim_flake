@@ -20,7 +20,6 @@
       runtimeDeps = with pkgs; [
         ripgrep
         fd
-        clang
         git
       ];
 
