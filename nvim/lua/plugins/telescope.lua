@@ -1,7 +1,18 @@
+local theme = {
+      border = false,
+      theme = "dropdown",
+    }
+
 require('telescope').setup({
   defaults = {
     border = false,
-  }
+  },
+  pickers = {
+    find_files = theme,
+    grep_string = theme,
+    live_grep = theme,
+    buffers = theme,
+  },
 })
 
 vim.api.nvim_create_autocmd("ColorScheme", {
