@@ -54,6 +54,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
+local hover = vim.lsp.buf.hover
+vim.lsp.buf.hover = function()
+    return hover({
+        border = "double",
+    })
+end
+
 vim.lsp.config('*', {
   capabilities = capabilities,
 })
